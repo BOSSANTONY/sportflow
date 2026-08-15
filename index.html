@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SportFlow - Gestionnaire intelligent d'entraînement"
+    >
+
+    <title>SportFlow — Training Intelligence</title>
+
+    <!-- Police extérieure -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icônes -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-symbol">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+                <strong>SPORT<span>FLOW</span></strong>
+                <small>TRAINING INTELLIGENCE</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <p class="nav-label">ESPACE SPORTIF</p>
+
+            <button class="nav-item active" data-section="dashboard">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Vue générale</span>
+            </button>
+
+            <button class="nav-item" data-section="workout">
+                <i class="fa-solid fa-dumbbell"></i>
+                <span>Entraînement</span>
+            </button>
+
+            <button class="nav-item" data-section="programs">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Programmes</span>
+            </button>
+
+            <button class="nav-item" data-section="exercises">
+                <i class="fa-solid fa-person-running"></i>
+                <span>Exercices</span>
+            </button>
+
+            <button class="nav-item" data-section="calendar">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Calendrier</span>
+            </button>
+
+            <p class="nav-label">ANALYSE</p>
+
+            <button class="nav-item" data-section="statistics">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Statistiques</span>
+            </button>
+
+            <button class="nav-item" data-section="body">
+                <i class="fa-solid fa-ruler-vertical"></i>
+                <span>Évolution corporelle</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-goal">
+                <div class="goal-icon">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+
+                <div>
+                    <strong id="sidebarStreak">7 jours</strong>
+                    <span>streak actuel</span>
+                </div>
+            </div>
+
+            <button class="settings-button">
+                <i class="fa-solid fa-gear"></i>
+                Paramètres
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-title">
+                <span id="currentDate"></span>
+                <h1 id="pageHeading">Bonjour, athlète 👋</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-button" id="themeButton">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="profile">
+                    <div class="avatar">AC</div>
+                    <div class="profile-info">
+                        <strong>Antony</strong>
+                        <small>Athlète</small>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+        <div class="content">
+
+
+            <!-- ================================================= -->
+            <!-- DASHBOARD -->
+            <!-- ================================================= -->
+
+            <section class="page-section active" id="dashboard">
+
+                <div class="hero-card">
+
+                    <div class="hero-content">
+
+                        <div class="eyebrow">
+                            <span class="live-dot"></span>
+                            SESSION DU JOUR
+                        </div>
+
+                        <h2>
+                            Prêt à dépasser<br>
+                            <span>ta dernière version.</span>
+                        </h2>
+
+                        <p>
+                            Ton entraînement du jour est prêt.
+                            Chaque série compte.
+                        </p>
+
+                        <button class="primary-button" data-section-target="workout">
+                            Commencer l'entraînement
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="energy-ring">
+                            <div>
+                                <strong>78%</strong>
+                                <span>ÉNERGIE</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-stat stat-one">
+                            <i class="fa-solid fa-fire"></i>
+                            <div>
+                                <strong>428</strong>
+                                <span>kcal</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-stat stat-two">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>
+                                <strong>84%</strong>
+                                <span>objectif</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- STATS RAPIDES -->
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>ENTRAÎNEMENTS</span>
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <strong id="totalWorkouts">24</strong>
+                        <div class="stat-change positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            12% cette semaine
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>VOLUME TOTAL</span>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                        </div>
+                        <strong id="totalVolume">8 420<span> kg</span></strong>
+                        <div class="stat-change positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            8.4% ce mois
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>STREAK</span>
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <strong>7<span> jours</span></strong>
+                        <div class="stat-change">
+                            Record : 14 jours
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>POIDS</span>
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <strong id="currentWeight">72<span> kg</span></strong>
+                        <div class="stat-change positive">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            -2.4 kg depuis juin
+                        </div>
+                    </article>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <!-- GRAPH -->
+                    <article class="panel performance-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <span class="panel-kicker">PERFORMANCE</span>
+                                <h3>Volume d'entraînement</h3>
+                            </div>
+
+                            <select id="chartPeriod">
+                                <option value="week">7 jours</option>
+                                <option value="month">30 jours</option>
+                                <option value="year">12 mois</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+
+                    </article>
+
+
+                    <!-- TODAY -->
+                    <article class="panel today-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <span class="panel-kicker">PROGRAMME ACTUEL</span>
+                                <h3>Upper Body</h3>
+                            </div>
+
+                            <span class="badge">Jour 3/5</span>
+
+                        </div>
+
+                        <div class="today-progress">
+                            <div class="progress-circle">
+                                <strong>60%</strong>
+                            </div>
+
+                            <div>
+                                <strong>4 exercices</strong>
+                                <span>48 min estimées</span>
+                            </div>
+                        </div>
+
+                        <div class="exercise-mini-list">
+
+                            <div class="exercise-mini">
+                                <div class="exercise-icon">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Développé couché</strong>
+                                    <span>4 × 8 · 70 kg</span>
+                                </div>
+
+                                <i class="fa-solid fa-circle-check done"></i>
+                            </div>
+
+                            <div class="exercise-mini">
+                                <div class="exercise-icon">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Tractions</strong>
+                                    <span>4 × 10 · Poids du corps</span>
+                                </div>
+
+                                <i class="fa-solid fa-circle-check done"></i>
+                            </div>
+
+                            <div class="exercise-mini">
+                                <div class="exercise-icon">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Développé épaules</strong>
+                                    <span>3 × 10 · 22 kg</span>
+                                </div>
+
+                                <i class="fa-regular fa-circle"></i>
+                            </div>
+
+                            <div class="exercise-mini">
+                                <div class="exercise-icon">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Curl biceps</strong>
+                                    <span>3 × 12 · 14 kg</span>
+                                </div>
+
+                                <i class="fa-regular fa-circle"></i>
+                            </div>
+
+                        </div>
+
+                        <button class="secondary-button" data-section-target="workout">
+                            Voir la séance
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+
+                <!-- BOTTOM -->
+                <div class="bottom-grid">
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <span class="panel-kicker">OBJECTIFS</span>
+                                <h3>Cette semaine</h3>
+                            </div>
+                            <span class="panel-value">4 / 5</span>
+                        </div>
+
+                        <div class="goal-row">
+                            <span>Entraînements</span>
+                            <div class="goal-progress">
+                                <span style="width:80%"></span>
+                            </div>
+                            <strong>80%</strong>
+                        </div>
+
+                        <div class="goal-row">
+                            <span>Volume</span>
+                            <div class="goal-progress">
+                                <span style="width:68%"></span>
+                            </div>
+                            <strong>68%</strong>
+                        </div>
+
+                        <div class="goal-row">
+                            <span>Cardio</span>
+                            <div class="goal-progress">
+                                <span style="width:45%"></span>
+                            </div>
+                            <strong>45%</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="panel ai-card">
+
+                        <div class="ai-symbol">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+
+                        <div>
+                            <span class="panel-kicker">SPORTFLOW AI</span>
+                            <h3>Créer ton programme idéal</h3>
+                            <p>
+                                Objectif, niveau, fréquence et matériel :
+                                laisse SportFlow construire ton programme.
+                            </p>
+                        </div>
+
+                        <button class="round-button" data-section-target="programs">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- WORKOUT -->
+            <!-- ================================================= -->
+
+            <section class="page-section" id="workout">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="panel-kicker">SESSION ACTIVE</span>
+                        <h2>Entraînement du jour</h2>
+                        <p>Upper Body · Jour 3</p>
+                    </div>
+
+                    <div class="workout-timer">
+                        <span>CHRONO</span>
+                        <strong id="workoutTimer">00:00</strong>
+                        <button id="timerButton">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="workout-layout">
+
+                    <div class="workout-main">
+
+                        <div class="exercise-header">
+
+                            <div>
+                                <span class="exercise-number">01</span>
+                                <div>
+                                    <span class="panel-kicker">EXERCICE</span>
+                                    <h3>Développé couché</h3>
+                                </div>
+                            </div>
+
+                            <button class="ghost-button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="sets-table">
+
+                            <div class="sets-head">
+                                <span>SÉRIE</span>
+                                <span>KG</span>
+                                <span>REPS</span>
+                                <span>RPE</span>
+                                <span></span>
+                            </div>
+
+                            <div class="set-row">
+                                <span class="set-number">01</span>
+                                <input type="number" value="60">
+                                <input type="number" value="10">
+                                <input type="number" value="7">
+                                <button class="set-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
+
+                            <div class="set-row">
+                                <span class="set-number">02</span>
+                                <input type="number" value="65">
+                                <input type="number" value="8">
+                                <input type="number" value="8">
+                                <button class="set-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
+
+                            <div class="set-row">
+                                <span class="set-number">03</span>
+                                <input type="number" value="70">
+                                <input type="number" value="8">
+                                <input type="number" value="9">
+                                <button class="set-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
+
+                            <div class="set-row">
+                                <span class="set-number">04</span>
+                                <input type="number" value="70">
+                                <input type="number" value="8">
+                                <input type="number" value="9">
+                                <button class="set-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <button class="add-set" id="addSet">
+                            <i class="fa-solid fa-plus"></i>
+                            Ajouter une série
+                        </button>
+
+
+                        <div class="rest-timer">
+
+                            <div>
+                                <span class="panel-kicker">TEMPS DE REPOS</span>
+                                <strong id="restTimer">01:30</strong>
+                            </div>
+
+                            <div class="rest-actions">
+                                <button data-rest="60">1 min</button>
+                                <button class="active" data-rest="90">1:30</button>
+                                <button data-rest="120">2 min</button>
+                            </div>
+
+                            <button class="start-rest" id="restButton">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <aside class="workout-sidebar">
+
+                        <div class="panel workout-summary">
+
+                            <span class="panel-kicker">PROGRESSION</span>
+
+                            <div class="big-progress">
+                                <div>
+                                    <strong id="workoutProgress">50%</strong>
+                                    <span>SESSION</span>
+                                </div>
+                            </div>
+
+                            <div class="summary-stat">
+                                <span>Exercices</span>
+                                <strong>2 / 4</strong>
+                            </div>
+
+                            <div class="summary-stat">
+                                <span>Séries</span>
+                                <strong>7 / 14</strong>
+                            </div>
+
+                            <div class="summary-stat">
+                                <span>Volume</span>
+                                <strong>1 420 kg</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="panel next-exercises">
+
+                            <div class="panel-header">
+                                <div>
+                                    <span class="panel-kicker">À SUIVRE</span>
+                                    <h3>Exercices</h3>
+                                </div>
+                            </div>
+
+                            <div class="next-exercise active">
+                                <span>01</span>
+                                <div>
+                                    <strong>Développé couché</strong>
+                                    <small>4 × 8</small>
+                                </div>
+                            </div>
+
+                            <div class="next-exercise">
+                                <span>02</span>
+                                <div>
+                                    <strong>Tractions</strong>
+                                    <small>4 × 10</small>
+                                </div>
+                            </div>
+
+                            <div class="next-exercise">
+                                <span>03</span>
+                                <div>
+                                    <strong>Développé épaules</strong>
+                                    <small>3 × 10</small>
+                                </div>
+                            </div>
+
+                            <div class="next-exercise">
+                                <span>04</span>
+                                <div>
+                                    <strong>Curl biceps</strong>
+                                    <small>3 × 12</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- PROGRAMMES -->
+            <!-- ================================================= -->
+
+            <section class="page-section" id="programs">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="panel-kicker">PLANIFICATION</span>
+                        <h2>Mes programmes</h2>
+                        <p>Construis ton prochain niveau.</p>
+                    </div>
+
+                    <button class="primary-button" id="openGenerator">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Générer un programme
+                    </button>
+
+                </div>
+
+
+                <div class="program-grid">
+
+                    <article class="program-card featured">
+
+                        <div class="program-top">
+                            <span class="badge">ACTIF</span>
+                            <button class="ghost-button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+
+                        <div class="program-icon">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+
+                        <h3>Hypertrophie 5×</h3>
+
+                        <p>
+                            Programme orienté prise de masse et progression
+                            régulière.
+                        </p>
+
+                        <div class="program-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 5 jours</span>
+                            <span><i class="fa-regular fa-clock"></i> 60 min</span>
+                            <span><i class="fa-solid fa-signal"></i> Intermédiaire</span>
+                        </div>
+
+                        <button class="secondary-button">
+                            Ouvrir le programme
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <article class="program-card">
+
+                        <div class="program-top">
+                            <span class="badge muted">ARCHIVÉ</span>
+                            <button class="ghost-button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+
+                        <div class="program-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <h3>Force fondamentale</h3>
+
+                        <p>
+                            Développer la force sur les mouvements composés.
+                        </p>
+
+                        <div class="program-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 4 jours</span>
+                            <span><i class="fa-regular fa-clock"></i> 75 min</span>
+                            <span><i class="fa-solid fa-signal"></i> Avancé</span>
+                        </div>
+
+                        <button class="secondary-button">
+                            Consulter
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <article class="program-card create-program">
+
+                        <div class="create-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+
+                        <h3>Nouveau programme</h3>
+
+                        <p>
+                            Génère automatiquement un plan adapté à ton objectif.
+                        </p>
+
+                        <button class="outline-button" id="openGenerator2">
+                            Créer
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- EXERCICES -->
+            <!-- ================================================= -->
+
+            <section class="page-section" id="exercises">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="panel-kicker">BIBLIOTHÈQUE</span>
+                        <h2>Exercices</h2>
+                        <p>Ta base d'exercices personnalisée.</p>
+                    </div>
+
+                    <button class="primary-button" id="addExercise">
+                        <i class="fa-solid fa-plus"></i>
+                        Ajouter
+                    </button>
+
+                </div>
+
+
+                <div class="exercise-tools">
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input
+                            type="text"
+                            id="exerciseSearch"
+                            placeholder="Rechercher un exercice..."
+                        >
+                    </div>
+
+                    <div class="filter-buttons">
+
+                        <button class="filter active" data-filter="all">
+                            Tous
+                        </button>
+
+                        <button class="filter" data-filter="chest">
+                            Pectoraux
+                        </button>
+
+                        <button class="filter" data-filter="back">
+                            Dos
+                        </button>
+
+                        <button class="filter" data-filter="legs">
+                            Jambes
+                        </button>
+
+                        <button class="filter" data-filter="arms">
+                            Bras
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="exercise-library" id="exerciseLibrary">
+
+                    <article class="library-card" data-category="chest">
+
+                        <div class="library-image chest-bg">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <span>PECTORAUX</span>
+                        </div>
+
+                        <div class="library-info">
+                            <h3>Développé couché</h3>
+                            <p>Barre · Pectoraux</p>
+
+                            <div class="library-stats">
+                                <span>PR <strong>95 kg</strong></span>
+                                <span>Volume <strong>8.4k</strong></span>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="library-card" data-category="back">
+
+                        <div class="library-image back-bg">
+                            <i class="fa-solid fa-person"></i>
+                            <span>DOS</span>
+                        </div>
+
+                        <div class="library-info">
+                            <h3>Tractions</h3>
+                            <p>Poids du corps · Dos</p>
+
+                            <div class="library-stats">
+                                <span>PR <strong>14 reps</strong></span>
+                                <span>Volume <strong>3.2k</strong></span>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="library-card" data-category="legs">
+
+                        <div class="library-image legs-bg">
+                            <i class="fa-solid fa-person-running"></i>
+                            <span>JAMBES</span>
+                        </div>
+
+                        <div class="library-info">
+                            <h3>Squat</h3>
+                            <p>Barre · Quadriceps</p>
+
+                            <div class="library-stats">
+                                <span>PR <strong>120 kg</strong></span>
+                                <span>Volume <strong>11.2k</strong></span>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="library-card" data-category="arms">
+
+                        <div class="library-image arms-bg">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <span>BRAS</span>
+                        </div>
+
+                        <div class="library-info">
+                            <h3>Curl biceps</h3>
+                            <p>Haltères · Biceps</p>
+
+                            <div class="library-stats">
+                                <span>PR <strong>20 kg</strong></span>
+                                <span>Volume <strong>2.8k</strong></span>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- STATISTICS -->
+            <!-- ================================================= -->
+
+            <section class="page-section" id="statistics">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="panel-kicker">DATA & PERFORMANCE</span>
+                        <h2>Statistiques</h2>
+                        <p>Comprends ton évolution.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>VOLUME</span>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                        </div>
+                        <strong>8.4K<span> kg</span></strong>
+                        <div class="stat-change positive">+18.2%</div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>REPS</span>
+                            <i class="fa-solid fa-repeat"></i>
+                        </div>
+                        <strong>1 248</strong>
+                        <div class="stat-change positive">+9.8%</div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>DURÉE</span>
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <strong>18<span>h</span></strong>
+                        <div class="stat-change positive">+4.5%</div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>PR RECORDS</span>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <strong>12</strong>
+                        <div class="stat-change positive">+3 ce mois</div>
+                    </article>
+
+                </div>
+
+
+                <div class="statistics-grid">
+
+                    <article class="panel large-chart">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <span class="panel-kicker">PROGRESSION</span>
+                                <h3>Performance musculaire</h3>
+                            </div>
+
+                            <select>
+                                <option>Développé couché</option>
+                                <option>Squat</option>
+                                <option>Tractions</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart-container tall">
+                            <canvas id="strengthChart"></canvas>
+                        </div>
+
+                    </article>
+
+
+                    <article class="panel muscle-panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <span class="panel-kicker">RÉPARTITION</span>
+                                <h3>Groupes musculaires</h3>
+                            </div>
+                        </div>
+
+                        <div class="muscle-list">
+
+                            <div>
+                                <span>Pectoraux</span>
+                                <div class="muscle-progress">
+                                    <span style="width:82%"></span>
+                                </div>
+                                <strong>82%</strong>
+                            </div>
+
+                            <div>
+                                <span>Dos</span>
+                                <div class="muscle-progress">
+                                    <span style="width:74%"></span>
+                                </div>
+                                <strong>74%</strong>
+                            </div>
+
+                            <div>
+                                <span>Jambes</span>
+                                <div class="muscle-progress">
+                                    <span style="width:63%"></span>
+                                </div>
+                                <strong>63%</strong>
+                            </div>
+
+                            <div>
+                                <span>Épaules</span>
+                                <div class="muscle-progress">
+                                    <span style="width:57%"></span>
+                                </div>
+                                <strong>57%</strong>
+                            </div>
+
+                            <div>
+                                <span>Bras</span>
+                                <div class="muscle-progress">
+                                    <span style="width:49%"></span>
+                                </div>
+                                <strong>49%</strong>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- BODY -->
+            <!-- ================================================= -->
+
+            <section class="page-section" id="body">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="panel-kicker">BODY TRACKING</span>
+                        <h2>Évolution corporelle</h2>
+                        <p>Observe les changements, pas seulement le poids.</p>
+                    </div>
+
+                    <button class="primary-button" id="addMeasurement">
+                        <i class="fa-solid fa-plus"></i>
+                        Nouvelle mesure
+                    </button>
+
+                </div>
+
+
+                <div class="body-overview">
+
+                    <div class="body-main-card">
+
+                        <div class="body-current">
+
+                            <span class="panel-kicker">POIDS ACTUEL</span>
+
+                            <div>
+                                <strong id="bodyWeight">72.0</strong>
+                                <span>kg</span>
+                            </div>
+
+                            <p>
+                                <i class="fa-solid fa-arrow-down"></i>
+                                2.4 kg depuis juin
+                            </p>
+
+                        </div>
+
+                        <div class="body-silhouette">
+                            <i class="fa-solid fa-person"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="body-metrics">
+
+                        <div>
+                            <span>IMC</span>
+                            <strong>22.4</strong>
+                            <small>Normal</small>
+                        </div>
+
+                        <div>
+                            <span>MASSE GRASSE</span>
+                            <strong>15.8%</strong>
+                            <small>-1.2%</small>
+                        </div>
+
+                        <div>
+                            <span>TOUR DE TAILLE</span>
+                            <strong>79 cm</strong>
+                            <small>-3 cm</small>
+                        </div>
+
+                        <div>
+                            <span>MASSE MUSCULAIRE</span>
+                            <strong>57.4 kg</strong>
+                            <small>+1.8 kg</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <article class="panel body-chart-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-kicker">ÉVOLUTION</span>
+                            <h3>Poids corporel</h3>
+                        </div>
+
+                        <span class="badge">6 derniers mois</span>
+
+                    </div>
+
+                    <div class="chart-container tall">
+                        <canvas id="bodyChart"></canvas>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- CALENDAR -->
+            <!-- ================================================= -->
+
+            <section class="page-section" id="calendar">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="panel-kicker">PLANIFICATION</span>
+                        <h2>Calendrier</h2>
+                        <p>Garde ton rythme.</p>
+                    </div>
+
+                    <button class="primary-button" id="todayCalendar">
+                        Aujourd'hui
+                    </button>
+
+                </div>
+
+
+                <article class="panel calendar-panel">
+
+                    <div class="calendar-header">
+
+                        <button id="previousMonth">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <h3 id="calendarMonth"></h3>
+
+                        <button id="nextMonth">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="calendar-weekdays">
+                        <span>Lun</span>
+                        <span>Mar</span>
+                        <span>Mer</span>
+                        <span>Jeu</span>
+                        <span>Ven</span>
+                        <span>Sam</span>
+                        <span>Dim</span>
+                    </div>
+
+                    <div class="calendar-days" id="calendarDays"></div>
+
+                </article>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- MODAL GENERATEUR -->
+<!-- ================================================= -->
+
+<div class="modal-overlay" id="generatorModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closeGenerator">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+
+        <span class="panel-kicker">SPORTFLOW AI</span>
+
+        <h2>Ton programme.<br><span>Automatiquement.</span></h2>
+
+        <p>
+            Réponds à quelques questions et SportFlow génère
+            une structure adaptée à ton objectif.
+        </p>
+
+        <form id="programForm">
+
+            <label>
+                Ton objectif
+
+                <select id="goal">
+                    <option value="muscle">Prise de masse</option>
+                    <option value="strength">Force</option>
+                    <option value="weightloss">Perte de poids</option>
+                    <option value="fitness">Remise en forme</option>
+                </select>
+            </label>
+
+            <label>
+                Niveau
+
+                <select id="level">
+                    <option value="beginner">Débutant</option>
+                    <option value="intermediate">Intermédiaire</option>
+                    <option value="advanced">Avancé</option>
+                </select>
+            </label>
+
+            <label>
+                Jours par semaine
+
+                <input
+                    type="range"
+                    id="days"
+                    min="2"
+                    max="6"
+                    value="4"
+                >
+
+                <output id="daysValue">4 jours</output>
+            </label>
+
+            <label>
+                Matériel
+
+                <select id="equipment">
+                    <option value="gym">Salle complète</option>
+                    <option value="home">Maison</option>
+                    <option value="bodyweight">Poids du corps</option>
+                </select>
+            </label>
+
+            <button class="primary-button full-button" type="submit">
+                Générer mon programme
+                <i class="fa-solid fa-sparkles"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- MODAL RESULTAT -->
+<!-- ================================================= -->
+
+<div class="modal-overlay" id="resultModal">
+
+    <div class="modal result-modal">
+
+        <button class="modal-close" id="closeResult">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="result-symbol">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <span class="panel-kicker">PROGRAMME GÉNÉRÉ</span>
+
+        <h2 id="generatedTitle">Ton programme</h2>
+
+        <p id="generatedDescription"></p>
+
+        <div class="generated-days" id="generatedDays"></div>
+
+        <button class="primary-button full-button" id="saveProgram">
+            <i class="fa-solid fa-bookmark"></i>
+            Enregistrer le programme
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- JavaScript extérieur -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
